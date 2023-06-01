@@ -106,8 +106,9 @@ autoUpdater.on('update-downloaded', (info) => {
 });
 app.on('ready', function() {
   // Create the Menu
-  const menu = Menu.buildFromTemplate(template);
-  Menu.setApplicationMenu(menu);
+  console.log('---ready----')
+  // const menu = Menu.buildFromTemplate(template);
+  // Menu.setApplicationMenu(menu);
   createDefaultWindow();
   autoUpdater.checkForUpdatesAndNotify();
 
