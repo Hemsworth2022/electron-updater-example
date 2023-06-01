@@ -1,11 +1,11 @@
 {
   "name": "electron-updater-example",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": "hemsworth2022",
   "scripts": {
-    "publish": "electron-builder -p always"
+    "publish": "electron-builder  --win --linux -p always"
   },
   "devDependencies": {
     "electron": "^14.0.1",
