@@ -17,6 +17,11 @@
     "electron-updater": "^4.3.9"
   },
   "build": {
+    "publish": [{
+      "provider": "github",
+      "owner": "hemsworth2022",
+      "repo": "electron-updater-example"
+  }],
     "appId": "com.github.hemsworth2022.electronupdaterexample",
     "afterSign": "./build/notarize.js",
     "win": {
