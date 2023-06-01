@@ -73,24 +73,35 @@ function createDefaultWindow() {
   return win;
 }
 autoUpdater.on('checking-for-update', () => {
+  console.log('--Checking for update.--')
   sendStatusToWindow('Checking for update...');
 })
 autoUpdater.on('update-available', (info) => {
+  console.log('--update-available.--', info)
+
   sendStatusToWindow('Update available.');
 })
 autoUpdater.on('update-not-available', (info) => {
+  console.log('--update not-available.--', info)
+
   sendStatusToWindow('Update not available.');
 })
 autoUpdater.on('error', (err) => {
+  console.log('--err.--', err)
+
   sendStatusToWindow('Error in auto-updater. ' + err);
 })
 autoUpdater.on('download-progress', (progressObj) => {
+  console.log('--download-progress.--', progressObj)
+
   let log_message = "Download speed: " + progressObj.bytesPerSecond;
   log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
   log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
   sendStatusToWindow(log_message);
 })
 autoUpdater.on('update-downloaded', (info) => {
+  console.log('--update-downloaded.--', info)
+
   sendStatusToWindow('Update downloaded');
 });
 app.on('ready', function() {
