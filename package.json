@@ -1,12 +1,13 @@
 {
   "name": "electron-updater-example",
-  "version": "0.9.10",
+  "version": "0.9.12",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": {
     "name": "Beldex International",
     "email": "support@beldex.io"
   },  "scripts": {
+    "start": "electron .",
     "publish": "electron-builder --linux -p always"
   },
   "devDependencies": {
@@ -34,7 +35,7 @@
     },
     "linux": {
       "category": "your.app.category.type",
-      "target":  "deb"
+      "target":  ["deb", "AppImage"]
     }
   }
 }

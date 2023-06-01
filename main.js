@@ -23,7 +23,7 @@ log.info('App starting...');
 // THIS SECTION IS NOT REQUIRED
 //-------------------------------------------------------------------
 let template = []
-if (process.platform === 'darwin') {
+if (process.platform === 'darwin' || process.platform === 'linux') {
   // OS X
   const name = app.getName();
   template.unshift({
@@ -101,6 +101,7 @@ autoUpdater.on('download-progress', (progressObj) => {
 })
 autoUpdater.on('update-downloaded', (info) => {
   console.log('--update-downloaded.--', info)
+  autoUpdater.quitAndInstall();  
 
   sendStatusToWindow('Update downloaded');
 });
@@ -110,7 +111,7 @@ app.on('ready', function() {
   // const menu = Menu.buildFromTemplate(template);
   // Menu.setApplicationMenu(menu);
   createDefaultWindow();
-  autoUpdater.checkForUpdatesAndNotify();
+  autoUpdater.checkForUpdates();
 
 });
 app.on('window-all-closed', () => {
